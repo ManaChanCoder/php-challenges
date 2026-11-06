@@ -1,39 +1,31 @@
 <?php
 
-$arrayGrades = [45, 88, 92, 60, 30, 100, 75];
-$arrayLettersGrade = [];
+/**
+ * Gumawa ng PHP script.
+ * Mag-define ng constant na APP_NAME na may value na "PHP Quiz App".
+ * Mag-declare ng variables para sa:
+ * Student name (String)
+ * Score (Integer)
+ * maxScore (Integer)
+ * Gamit ang Operators, kuhanin ang Percentage Score ((score / maxScore) * 100).
+ * Gamit ang Ternary Operator, mag-assign ng status variable: "PASSED" kung ang percentage ay 70 pataas, kung hindi ay "FAILED".
+ * I-print (gamit ang echo o print) ang buong resulta sa isang maayos na format/sentence.
+ */
 
-foreach ($arrayGrades as $index => $value) {
-    if ($value >= 90 && $value <= 100) {
-        $arrayLettersGrade[$index] = "A";
-    } else if ($value >= 80 && $value <= 89) {
-        $arrayLettersGrade[$index] = "B";
-    } else if ($value >= 70 && $value <= 79) {
-        $arrayLettersGrade[$index] = "C";
-    } else if ($value >= 60 && $value <= 69) {
-        $arrayLettersGrade[$index] = "D";
-    } else if ($value < 60) {
-        $arrayLettersGrade[$index] = "F";
-    }
 
-    echo "Score: $value => Letter Grade: " . $arrayLettersGrade[$index] . "<br>";
+define("APP_NAME", "PHP Quiz App");
 
-    switch ($arrayLettersGrade[$index]) {
-        case "A":
-            echo "A => Excellent! <br>";
-            break;
-        case "B":
-            echo "B => Good job! <br>";
-            break;
-        case "C":
-            echo "C => Fair performance. <br>";
-            break;
-        case "D":
-            echo "D => Needs Improvement. <br>";
-            break;
-        case "F":
-            echo "F => Failed. Study more. <br>";
-            break;
-    }
-    echo "<br>";
-}
+$studentName = "Manachan";
+$score = 85;
+$maxScore = 100;
+$percentageScore = ($score / $maxScore) * 100;
+
+$status = ($percentageScore >= 70) ? "PASSED" : "FAILED";
+
+// echo or printing the result in a formatted sentence
+echo APP_NAME . "<br>";
+echo "Student Name: " . $studentName . "<br>";
+echo "Score: " . $score . "<br>";
+echo "Max score: " . $maxScore . "<br>";
+echo "Percentage Score: " . $percentageScore . "<br>";
+echo "Status: " . $status . "<br>";
