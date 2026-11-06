@@ -1,11 +1,16 @@
-# 🐘 PHP Challenge: String Manipulation & Formatting
+# PHP Challenge: Order Receipt & Tax Computation
 
-Isang PHP practice script na nagpapakita ng pag-parse, pag-manipula, at pag-format ng raw string data gamit ang mga built-in string functions ng PHP tulad ng `explode()`, `str_replace()`, at `strtoupper()`.
+Isang simpleng PHP script na nagko-compute ng subtotal, discount, tax (VAT), at final total mula sa isang listahan ng mga biniling item gamit ang associative array at custom function.
 
 ---
 
-## 📋 Challenge Objectives
+## 📌 Features / Requirements
 
-1. **`explode()`**: Hatiin ang single formatted string (`"FirstName,LastName|..."`) sa individual name pairs gamit ang delimiter na `|`.
-2. **`str_replace()` / Formatting**: Palitan ang mga comma `,` ng space sa pagitan ng pangalan at apelyido.
-3. **`strtoupper()`**: Gawing uppercase ang buong pangalan at apelyido bago ito i-output sa browser.
+- **Constants**: `TAX_RATE` (0.12 o 12%).
+- **Associative Array**: Listahan ng items at kanya-kanyang presyo.
+- **Custom Function (`processOrders`)**:
+  - Iteration gamit ang `foreach` loop para kunin ang subtotal at ma-print ang bawat item.
+  - Conditional discount: **10% discount** kapag ang subtotal ay lumampas sa ₱10,000.
+  - Computation ng discount amount, discounted subtotal, tax amount, at total price.
+
+---
