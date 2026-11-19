@@ -1,36 +1,20 @@
-# PHP Discount Price Calculator
+# Simple PHP Login Script
 
-A lightweight PHP helper function that calculates the final price of an item after applying a percentage discount, rounded to two decimal places.
+A lightweight, single-file PHP script featuring basic form handling, input sanitization, and credential validation with JavaScript alert notifications.
 
-## Function Signature
+## Features
 
-```php
-calculateFinalPrice(float $price = 0, float$discountedPercent = 0): float
-```
+- **Single-File Architecture:** Combines both frontend HTML form and backend PHP logic in one file.
+- **Input Sanitization:** Uses `htmlspecialchars()` on the email input to help protect against basic XSS.
+- **Basic Validation:**
+  - Checks if the email field is empty.
+  - Validates that the password length is greater than 6 characters.
+- **Feedback Mechanism:** Uses JavaScript `alert()` popups to display success or error messages to the user.
 
-## Parameters
+## File Structure
 
-| Parameter            | Type         | Default | Description                                             |
-| :------------------- | :----------- | :------ | :------------------------------------------------------ |
-| `$price`             | `float\|int` | `0`     | The original price before discount.                     |
-| `$discountedPercent` | `float\|int` | `0`     | The discount percentage to deduct (e.g., `20` for 20%). |
-
-## Return Value
-
-Returns a `float` representing the final price after deducting the discount, rounded to 2 decimal places.
-
-## Usage Example
-
-```php
-<?php
-
-function calculateFinalPrice($price = 0,$discountedPercent = 0)
-{
-    $discountedPrice =$price * ($discountedPercent / 100);$totalPrice = $price -$discountedPrice;
-
-    return round($totalPrice, 2);
-}
-
-// Example: 20% discount on 98,934.34
-echo calculateFinalPrice(98934.34, 20); // Output: 79147.47
+```text
+├── index.php      # Main login form and PHP authentication logic
+├── style.css      # External stylesheet (referenced in HTML head)
+└── README.md      # Project documentation
 ```
